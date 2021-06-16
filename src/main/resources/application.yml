@@ -4,7 +4,7 @@ spring:
     properties:
       hibernate.dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/sia_region_aoi

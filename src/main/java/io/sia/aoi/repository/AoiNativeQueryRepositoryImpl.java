@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -23,5 +24,18 @@ public class AoiNativeQueryRepositoryImpl implements AoiNativeQueryRepository {
                 .setParameter("id", id)
                 .getResultList();
     }
+
+    @Override
+    public Aoi getInterestNearbyAreaByLatWithLong(final float latitude, final float longitude) {
+        return (Aoi) em.createNativeQuery(
+                "SELECT ai.aoi_id, ai.name, ai.area as area" +
+                        " FROM Aoi as ai" +
+                        " ORDER BY ST_DistanceSphere(ai.area, ST_MakePoint(:latitude,:longitude)) DESC" +
+                        " LIMIT 1", Aoi.class)
+                .setParameter("latitude", latitude)
+                .setParameter("longitude", longitude)
+                .getSingleResult();
+    }
+
 
 }

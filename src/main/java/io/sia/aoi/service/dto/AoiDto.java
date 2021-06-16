@@ -48,6 +48,17 @@ public class AoiDto {
             this.area = area;
         }
     }
+    @Getter
+    public static class InterestAoisResponse {
+        private final Long id;
+        private final String name;
+
+        public InterestAoisResponse(Long id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+    }
 
     @Data
     @AllArgsConstructor
