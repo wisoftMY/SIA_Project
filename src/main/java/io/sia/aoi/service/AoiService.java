@@ -13,4 +13,5 @@ public interface AoiService {
 
     Long register(final AoiRegisterRequest aoiDto);
     List<intersectsAoiResponse> getIntersectsAoiByRegionId(final Long id) throws ParseException;
+    InterestAoisResponse getInterestNearbyAreaByLatWithLong(final float latitude, final float longitude);
 }

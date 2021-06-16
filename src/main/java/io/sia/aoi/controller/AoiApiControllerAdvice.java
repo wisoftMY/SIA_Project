@@ -1,10 +1,9 @@
 package io.sia.aoi.controller;
 
 import io.sia.aoi.exception.AoiDuplicatedException;
-import io.sia.aoi.exception.AoiNotFountException;
+import io.sia.aoi.exception.AoiNotFoundException;
 import io.sia.common.BindingErrorResponse;
 import io.sia.common.ErrorResponse;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -25,13 +24,13 @@ public class AoiApiControllerAdvice {
         return errorResponse;
     }
 
-    @ExceptionHandler(AoiNotFountException.class)
+    @ExceptionHandler(AoiNotFoundException.class)
     @ResponseStatus(BAD_REQUEST)
-    public ErrorResponse handleAoiNotFoundException(final AoiNotFountException e) {
+    public ErrorResponse handleAoiNotFoundException(final AoiNotFoundException e) {
         final ErrorResponse errorResponse = new ErrorResponse();
         errorResponse.setCode("AoiApiController-Aoi002");
         errorResponse.setTitle("Aoi Not Found Exception");
-        errorResponse.setMessage("입력하신 " + e.getInformation() + "에 해당하는 Region이 없습니다.");
+        errorResponse.setMessage("입력하신 " + e.getInformation() + "에 해당하는 Aoi가 없습니다.");
         return errorResponse;
     }
 
