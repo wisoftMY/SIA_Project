@@ -38,12 +38,12 @@ public class Area {
     }
 
     public static List<List<Area>> createAreaFromPolygon(final List<Polygon> areaDto) throws ParseException {
-        List<List<Area>> areasList = new LinkedList<>();
+        final List<List<Area>> areasList = new LinkedList<>();
+        final WKTWriter wktWriter = new WKTWriter();
+        final WKTReader reader = new WKTReader();
 
         for(Polygon polygon :areaDto) {
             List<Area> areas = new LinkedList<>();
-            WKTWriter wktWriter = new WKTWriter();
-            WKTReader reader = new WKTReader();
             String wktstr = wktWriter.write(polygon);
             Geometry geometryFromWkt = reader.read(wktstr);
             Coordinate[] coordinates = geometryFromWkt.getCoordinates();

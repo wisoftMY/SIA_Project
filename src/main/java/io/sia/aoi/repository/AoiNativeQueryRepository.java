@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface AoiNativeQueryRepository {
 
-    List<Aoi> getIntersectsRegionByRegionId(Long id);
+    List<Aoi> getIntersectsRegionByRegionId(final Long id);
 }
