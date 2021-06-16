@@ -1,0 +1,72 @@
+### 1. 행정지역의 이름, 전체 지리 정보를 저장합니다.
+POST http://localhost:8080/regions
+Content-Type: application/json
+Accept-Charset: utf-8
+
+{
+  "name": "서울시",
+  "area": [
+    {
+      "x": 126.835,
+      "y": 37.688
+    },
+    {
+      "x": 127.155,
+      "y": 37.702
+    },
+    {
+      "x": 127.184,
+      "y": 37.474
+    },
+    {
+      "x": 126.821,
+      "y": 37.454
+    },
+    {
+      "x": 126.835,
+      "y": 37.688
+    }
+  ]
+}
+
+### 2. 관심 지역의 이름, 전체 지리 정보를 저장합니다.
+POST http://localhost:8080/aois
+Content-Type: application/json
+Accept-Charset: utf-8
+
+{
+  "name": "북한산",
+  "area": [
+    {
+      "x": 127.02,
+      "y": 37.742
+    },
+    {
+      "x": 127.023,
+      "y": 37.664
+    },
+    {
+      "x": 126.945,
+      "y": 37.605
+    },
+    {
+      "x": 126.962,
+      "y": 37.692
+    },
+    {
+      "x": 127.02,
+      "y": 37.742
+    }
+  ]
+}
+
+### 3.행정지역에 지리적으로 포함되는 관심지역을 조회합니다.
+GET http://localhost:8080/regions/1/aois/intersects
+Accept: application/json
+
+> {%
+  client.test("Region Id를 활용하여 행정지역에 지리적으로 포함되는 관심지역을 조회합니다. ", function() {
+      client.assert(response.status === 200, "Response status is not 200")
+
+  })
+ %}
