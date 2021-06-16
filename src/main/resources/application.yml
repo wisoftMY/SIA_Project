@@ -1,0 +1,17 @@
+spring:
+  #datasource
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sia_region_aoi
+    username: sia_admin
+    password: siaDB1004**
+
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
