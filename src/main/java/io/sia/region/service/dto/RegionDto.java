@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -21,7 +20,6 @@ public class RegionDto {
     public static class RegionRegisterRequest {
 
         @NotBlank
-        @Size(max = 50)
         private String name;
 
         @NotNull

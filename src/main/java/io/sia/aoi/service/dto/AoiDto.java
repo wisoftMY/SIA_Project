@@ -31,7 +31,7 @@ public class AoiDto {
 
         private final Long id;
 
-        public AoiRegisterResponse(Long id) {
+        public AoiRegisterResponse(final Long id) {
             this.id = id;
         }
     }
@@ -42,7 +42,7 @@ public class AoiDto {
         private final String name;
         private final List<Area> area;
 
-        public intersectsAoiResponse(Long id, String name, List<Area> area) {
+        public intersectsAoiResponse(final Long id, final String name, final List<Area> area) {
             this.id = id;
             this.name = name;
             this.area = area;
