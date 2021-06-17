@@ -10,6 +10,8 @@ import org.locationtech.jts.geom.Polygon;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static io.sia.region.service.dto.RegionDto.RegionRegisterRequest;
 
 @Slf4j
@@ -24,7 +26,7 @@ public class RegionServiceImpl implements RegionService {
     public Long register(final RegionRegisterRequest regionDto) {
         checkDuplicateName(regionDto.getName());
         Polygon polygon = Area.createPolygon(regionDto.getArea());
-        Region region = Region.createRegion(regionDto, polygon);
+        Region region = Region.createRegion(regionDto.getName(), polygon);
 
         final Region findRegion = regionRepository.save(region);
 

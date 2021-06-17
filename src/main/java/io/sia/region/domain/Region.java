@@ -29,9 +29,9 @@ public class Region {
     private Polygon area;
 
     // 생성 메서드
-    public static Region createRegion(final RegionRegisterRequest regionDto, final Polygon polygon) {
+    public static Region createRegion(final String name, final Polygon polygon) {
         Region region = new Region();
-        region.setName(regionDto.getName());
+        region.setName(name);
         region.setArea(polygon);
 
         return region;

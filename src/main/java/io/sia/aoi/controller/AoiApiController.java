@@ -1,8 +1,10 @@
 package io.sia.aoi.controller;
 
 import io.sia.aoi.service.AoiServiceImpl;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.io.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,7 +28,7 @@ public class AoiApiController {
 
     @GetMapping("/regions/{region-id}/aois/intersects")
     public Result<List<intersectsAoiResponse>> getIntersectsRegionByRegionId (
-            @PathVariable("region-id") final Long id) throws ParseException {
+            @PathVariable("region-id") @Valid final Long id) throws ParseException {
         final List<intersectsAoiResponse> intersectsAoiResponse = aoiServiceImpl.getIntersectsAoiByRegionId(id);
 
         return new Result<>(intersectsAoiResponse);
@@ -34,8 +36,8 @@ public class AoiApiController {
 
     @GetMapping("/aois")
     public Result<InterestAoisResponse> getInterestNearbyAreaByLatWithLong (
-        @RequestParam(value = "lat") float latitude,
-        @RequestParam(value = "long") float longitude
+        @RequestParam(value = "lat") @Valid float latitude,
+        @RequestParam(value = "long") @Valid float longitude
     ){
         final InterestAoisResponse interestAoiResponse = aoiServiceImpl.getInterestNearbyAreaByLatWithLong(latitude,longitude);
 

@@ -1,7 +1,6 @@
 package io.sia.aoi.service.dto;
 
 import io.sia.common.Area;
-import io.sia.common.dto.AreaDto;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -22,7 +21,7 @@ public class AoiDto {
         private String name;
 
         @NotNull
-        private List<AreaDto> area;
+        private List<Area> area;
 
     }
 
@@ -48,6 +47,7 @@ public class AoiDto {
             this.area = area;
         }
     }
+
     @Getter
     public static class InterestAoisResponse {
         private final Long id;

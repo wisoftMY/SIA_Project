@@ -1,6 +1,5 @@
 package io.sia.common;
 
-import io.sia.common.dto.AreaDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,11 +21,11 @@ public class Area {
     private float y;
 
     // 생성 메서드
-    public static Polygon createPolygon(final List<AreaDto> areaDto) {
+    public static Polygon createPolygon(final List<Area> areaDto) {
         GeometryFactory factory = new GeometryFactory(new PrecisionModel(), 4326);
         List<Coordinate> coordinates = new LinkedList<>();
 
-        for(AreaDto area : areaDto) {
+        for(Area area : areaDto) {
             Coordinate coordinate = new Coordinate(area.getX(),area.getY());
             coordinates.add(coordinate);
         }

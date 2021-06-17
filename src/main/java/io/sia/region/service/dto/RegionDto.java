@@ -1,13 +1,10 @@
 package io.sia.region.service.dto;
 
-import io.sia.common.dto.AreaDto;
+import io.sia.common.Area;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 public class RegionDto {
 
@@ -22,8 +19,8 @@ public class RegionDto {
         @NotBlank
         private String name;
 
-        @NotNull
-        private List<AreaDto> area;
+        @NotBlank
+        private List<Area> area;
 
     }
 
