@@ -11,9 +11,10 @@ $ docker-compose up
 
 ## 2. API 실행방법
 ### 행정지역의 이름, 전체 지리 정보를 저장합니다.
-[POST] http://{ip address}:8082/regions<br>
-Content-Type: application/json<br>
-Accept-Charset: utf-8
+
+**[POST] http://{ip address}:8082/regions<br>**
+**Content-Type: application/json<br>**
+**Accept-Charset: utf-8**
 
 * 요청 형식
 ```json
@@ -51,9 +52,9 @@ Accept-Charset: utf-8
 ```
 
 ### 관심 지역의 이름, 전체 지리 정보를 저장합니다.
-[POST] http://{ip address}:8082/aois<br>
-Content-Type: application/json<br>
-Accept-Charset: utf-8
+**[POST] http://{ip address}:8082/aois<br>**
+**Content-Type: application/json<br>**
+**Accept-Charset: utf-8**
 
 * 요청 형식
 ```json
@@ -82,16 +83,16 @@ Accept-Charset: utf-8
     }
   ]
 }
-```json
-* 응답 형식
 ```
+* 응답 형식
+```json
 {
    "id": 1
 }
 ```
 ### 행정지역에 지리적으로 포함되는 관심지역을 조회합니다.
-GET http://{ip address}:8082/regions/1/aois/intersects
-Accept: application/json
+**GET http://{ip address}:8082/regions/1/aois/intersects<br>**
+**Accept: application/json**
 
 * 응답 형식
 ```json 
@@ -157,8 +158,8 @@ Accept: application/json
 }
 ```
 ### 특정 좌표에 가장 가까운 관심지역을 조회합니다.
-[GET] http://{ip address}/aois?lat={lat}&long={long}
-Accept: application/json
+**[GET] http://{ip address}/aois?lat={lat}&long={long}<br>**
+**Accept: application/json**
 
 * 응답 형식
 ```json
