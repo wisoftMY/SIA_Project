@@ -35,6 +35,7 @@ public class Aoi {
         Aoi aoi = new Aoi();
         aoi.setName(regionDto.getName());
         aoi.setArea(polygon);
+
         return aoi;
     }
 
@@ -55,6 +56,7 @@ public class Aoi {
                             areas));
             index++;
         }
+
         return intersectsAoiResponseList;
     }
 }

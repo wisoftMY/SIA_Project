@@ -1,8 +1,6 @@
 package io.sia.common;
 
-import io.sia.aoi.domain.Aoi;
 import io.sia.common.dto.AreaDto;
-import io.sia.region.service.dto.RegionDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,6 +30,7 @@ public class Area {
             Coordinate coordinate = new Coordinate(area.getX(),area.getY());
             coordinates.add(coordinate);
         }
+
         Polygon polygon = factory.createPolygon(coordinates.toArray(Coordinate[]::new));
 
         return polygon;
