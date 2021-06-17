@@ -56,7 +56,7 @@ public class AoiServiceImpl implements AoiService {
 
     @Transactional(readOnly = true)
     @Override
-    public InterestAoisResponse getInterestNearbyAreaByLatWithLong(float latitude, float longitude) {
+    public InterestAoisResponse getInterestNearbyAreaByLatWithLong(final float latitude,final float longitude) {
         Aoi findAoi = aoiNativeQueryRepository.getInterestNearbyAreaByLatWithLong(latitude, longitude);
 
         return new InterestAoisResponse(findAoi.getId(),findAoi.getName());

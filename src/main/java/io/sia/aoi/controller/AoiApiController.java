@@ -1,10 +1,8 @@
 package io.sia.aoi.controller;
 
 import io.sia.aoi.service.AoiServiceImpl;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.io.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
