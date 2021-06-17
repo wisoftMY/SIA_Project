@@ -1,5 +1,5 @@
-### 1. 행정지역의 이름, 전체 지리 정보를 저장합니다.
-POST http://localhost:8080/regions
+### 1. 서울시의 전체 지리 정보를 저장합니다.
+POST http://localhost:8082/regions
 Content-Type: application/json
 Accept-Charset: utf-8
 
@@ -29,8 +29,76 @@ Accept-Charset: utf-8
   ]
 }
 
-### 2. 관심 지역의 이름, 전체 지리 정보를 저장합니다.
-POST http://localhost:8080/aois
+### 2. 과천시의 전체 지리 정보를 저장합니다.
+POST http://localhost:8082/regions
+Content-Type: application/json
+Accept-Charset: utf-8
+
+{
+  "name": "과천시",
+  "area": [
+    {
+      "x": 126.998,
+      "y": 37.463
+    },
+    {
+      "x": 127.028,
+      "y": 37.436
+    },
+    {
+      "x": 126.992,
+      "y": 37.403
+    },
+    {
+      "x": 126.965,
+      "y": 37.421
+    },
+    {
+      "x": 126.998,
+      "y": 37.463
+    }
+  ]
+}
+
+### 3. 의정부시의 전체 지리 정보를 저장합니다.
+POST http://localhost:8082/regions
+Content-Type: application/json
+Accept-Charset: utf-8
+
+{
+  "name": "의정부시",
+  "area": [
+    {
+      "x": 127.025,
+      "y": 37.766
+    },
+    {
+      "x": 127.096,
+      "y": 37.766
+    },
+    {
+      "x": 127.099,
+      "y": 37.724
+    },
+    {
+      "x": 127.035,
+      "y": 37.705
+    },
+    {
+      "x": 127.020,
+      "y": 37.742
+    },
+    {
+      "x": 127.025,
+      "y": 37.766
+    }
+
+  ]
+}
+
+
+### 4. 관심 지역 북한산의 전체 지리 정보를 저장합니다.
+POST http://localhost:8082/aois
 Content-Type: application/json
 Accept-Charset: utf-8
 
@@ -60,7 +128,42 @@ Accept-Charset: utf-8
   ]
 }
 
-### 3.행정지역에 지리적으로 포함되는 관심지역을 조회합니다.
+### 5. 관심 지역 관악산의 전체 지리 정보를 저장합니다.
+POST http://localhost:8082/aois
+Content-Type: application/json
+Accept-Charset: utf-8
+
+{
+  "name": "관악산",
+  "area": [
+    {
+      "x": 126.985,
+      "y": 37.464
+    },
+    {
+      "x": 126.980,
+      "y": 37.429
+    },
+    {
+      "x": 126.933,
+      "y": 37.406
+    },
+    {
+      "x": 126.910,
+      "y": 37.432
+    },
+    {
+      "x": 126.931,
+      "y": 37.456
+    },
+    {
+      "x": 126.985,
+      "y": 37.464
+    }
+  ]
+}
+
+### 6.행정지역에 지리적으로 포함되는 관심지역을 조회합니다.
 GET http://localhost:8080/regions/4/aois/intersects
 Accept: application/json
 
@@ -70,7 +173,7 @@ Accept: application/json
   })
  %}
 
-### 4.특정 좌표에 가장 가까운 관심지역을 조회합니다.
+### 7.특정 좌표에 가장 가까운 관심지역을 조회합니다.
 GET http://localhost:8080/aois?lat=127.026993&long=37.497933
 Accept: application/json
 
