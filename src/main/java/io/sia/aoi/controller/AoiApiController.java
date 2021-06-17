@@ -28,6 +28,7 @@ public class AoiApiController {
     public Result<List<intersectsAoiResponse>> getIntersectsRegionByRegionId (
             @PathVariable("region-id") final Long id) throws ParseException {
         final List<intersectsAoiResponse> intersectsAoiResponse = aoiServiceImpl.getIntersectsAoiByRegionId(id);
+
         return new Result<>(intersectsAoiResponse);
     }
 
@@ -37,6 +38,7 @@ public class AoiApiController {
         @RequestParam(value = "long") float longitude
     ){
         final InterestAoisResponse interestAoiResponse = aoiServiceImpl.getInterestNearbyAreaByLatWithLong(latitude,longitude);
+
         return new Result<>(interestAoiResponse);
     }
 

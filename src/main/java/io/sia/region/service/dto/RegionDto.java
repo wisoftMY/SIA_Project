@@ -36,19 +36,4 @@ public class RegionDto {
             this.id = id;
         }
     }
-
-    @Getter
-    @Setter
-    public static class RegionResponse {
-
-        private Long id;
-        private String name;
-        private AreaDto area;
-        private UUID deviceId;
-        private UUID modelId;
-        private LocalDateTime joined;
-        private LocalDateTime updated;
-        private String description;
-
-    }
 }

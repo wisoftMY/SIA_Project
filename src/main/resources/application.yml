@@ -9,12 +9,12 @@ spring:
     properties:
       hibernate.dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:54320/sia_region_aoi
-    username: sia_admin
-    password: siaDB1004**
+    url: jdbc:postgresql://${DB_HOST:localhost}:54320/sia_backend
+    username: sia_backend
+    password: SIADB1004**
 
 
 logging:

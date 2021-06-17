@@ -1,6 +1,5 @@
 package io.sia.region.controller;
 
-import io.sia.aoi.exception.AoiDuplicatedException;
 import io.sia.common.BindingErrorResponse;
 import io.sia.common.ErrorResponse;
 import io.sia.region.exception.RegionDuplicatedException;
