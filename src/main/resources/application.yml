@@ -1,3 +1,8 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+
 spring:
   #datasource
   jpa:
@@ -7,11 +12,16 @@ spring:
       ddl-auto: create
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/sia_region_aoi
+    url: jdbc:postgresql://${DB_HOST:localhost}:54320/sia_region_aoi
     username: sia_admin
     password: siaDB1004**
 
 
-logging.level:
-  org.hibernate.SQL: debug
-  org.hibernate.type: trace
+logging:
+  file:
+    name: ./logs/api-server-prod.log
+  level:
+    io.sia: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
+    org.springframework: OFF
