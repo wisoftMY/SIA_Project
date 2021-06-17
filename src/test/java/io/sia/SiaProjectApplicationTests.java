@@ -1,4 +1,4 @@
-package io.sia.siaproject;
+package io.sia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

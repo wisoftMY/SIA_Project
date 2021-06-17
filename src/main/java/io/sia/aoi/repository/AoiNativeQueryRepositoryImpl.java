@@ -29,7 +29,7 @@ public class AoiNativeQueryRepositoryImpl implements AoiNativeQueryRepository {
         return (Aoi) em.createNativeQuery(
                 "SELECT ai.aoi_id, ai.name, ai.area as area" +
                         " FROM Aoi as ai" +
-                        " ORDER BY ST_DistanceSphere(ai.area, ST_MakePoint(:latitude,:longitude)) DESC" +
+                        " ORDER BY ST_DistanceSphere(ai.area, ST_MakePoint(:latitude,:longitude))" +
                         " LIMIT 1", Aoi.class)
                 .setParameter("latitude", latitude)
                 .setParameter("longitude", longitude)
