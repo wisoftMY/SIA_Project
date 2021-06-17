@@ -164,7 +164,7 @@ Accept-Charset: utf-8
 }
 
 ### 6.행정지역에 지리적으로 포함되는 관심지역을 조회합니다.
-GET http://localhost:8080/regions/4/aois/intersects
+GET http://localhost:8082/regions/1/aois/intersects
 Accept: application/json
 
 > {%
@@ -174,7 +174,7 @@ Accept: application/json
  %}
 
 ### 7.특정 좌표에 가장 가까운 관심지역을 조회합니다.
-GET http://localhost:8080/aois?lat=127.026993&long=37.497933
+GET http://localhost:8082/aois?lat=127.026993&long=37.497933
 Accept: application/json
 
 > {%
